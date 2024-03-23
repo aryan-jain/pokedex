@@ -54,6 +54,7 @@ func (c *Client) ListLocationAreas(url *string) (LocationAreas, error) {
 		log.Fatal(err)
 		return LocationAreas{}, err
 	}
+	c.cache.Set(pageURL, body)
 
 	var locationAreas LocationAreas
 	err = json.Unmarshal(body, &locationAreas)

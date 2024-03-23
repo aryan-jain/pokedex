@@ -91,6 +91,7 @@ func (c *Client) ExploreLocation(area string) (LocationDetails, error) {
 		log.Fatal(err)
 		return LocationDetails{}, err
 	}
+	c.cache.Set(pageURL, body)
 
 	var location LocationDetails
 	err = json.Unmarshal(body, &location)

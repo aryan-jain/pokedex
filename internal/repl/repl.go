@@ -47,6 +47,21 @@ func getCommands() map[string]CliCommand {
 			description: "Show wild pokemon encounters in the location. [e.g. explore canalave-city-area]",
 			callback:    commandExplore,
 		},
+		"catch": {
+			name:        "catch <pokemon name>",
+			description: "Catch a pokemon. [e.g. catch pikachu]",
+			callback:    commandCatch,
+		},
+		"bag": {
+			name:        "bag",
+			description: "Show pokemon in your bag",
+			callback:    commandBag,
+		},
+		"inspect": {
+			name:        "inspect <pokemon name>",
+			description: "Inspect a pokemon that you have caught. [e.g. inspect pikachu]",
+			callback:    commandInspect,
+		},
 	}
 }
 
